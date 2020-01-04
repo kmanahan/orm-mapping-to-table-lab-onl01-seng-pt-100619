@@ -27,8 +27,9 @@ class Student
 # INSERT INTO Persons (FirstName) VALUES ('Joe');
 # SELECT ID AS LastID FROM Persons WHERE ID = @@Identity 
   def save 
-    sql = "INSERT INTO students (name, grade) VALUES (?,?)"; "SELECT ID AS LastID FROM students WHERE ID = @id";
-    DB[:conn].execute(sql, self.name, self.grade)
+    sql = "INSERT INTO students (name, grade) VALUES (?,?)"; 
+    DB[:conn].execute(sql, name, grade)
+    
   end 
   
   def self.create(name:, grade:)
